@@ -14,6 +14,7 @@ class Counters extends Component {
     render() { 
         return ( 
             <div>
+            {/*ADDED MAP FUNCTION TO ITERATE THROUGH COUNTERS ARRAY AND AN IMPORTED COMPONENT FROM COUNTERCOMPONENT FILE*/}
               {this.state.counters.map(counter => <Counter key={counter.id} value={counter.value} />)}
                 
             </div> );
