@@ -7,13 +7,13 @@ class Counter extends Component{
         tags: ['tag1', 'tag2', 'tag3']
         
     };
-
+     //ARROW FUNCTION TO SKIP BINDING THIS TO CONSTRUCTOR
     handleIncrement = () => {
         this.setState({
             count: this.state.count + 1
         })
     }
-
+        //IF STATEMENT TO MAP OUT EACH TAG IN ARRAY
    renderTags(){
        if (this.state.tags.length === 0) return <p>There are no tags!</p>;
 
@@ -22,6 +22,7 @@ class Counter extends Component{
     render(){
        
         return (
+            //REACT FRAGMENT GETS RID OF AN EXTRA DIV IN COMPONENT
         <React.Fragment>
             
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
@@ -30,12 +31,14 @@ class Counter extends Component{
         </React.Fragment>);
     }
     getBadgeClasses() {
+        //ADD BOOTSTRAP CLASS ONTO TAGS WITH AN IF STATEMENT
         let classes = "badge m-2 ";
         classes += this.state.count === 0 ? 'badge-warning' : 'badge-primary';
         return classes;
     }
 
     formatCount(){
+        //IF STATEMENT TO MAKE NUMBER 0 TURN TO STRING
         const {count} = this.state;
         return count === 0 ? 'Zero' : count;
     }
